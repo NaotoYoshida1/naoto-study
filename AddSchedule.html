@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>予定の登録</title>
+</head>
+<body>
+    <div class="all" style="background: #ffffff; border: #ffffff solidsolid 2px; font-size: 100%; padding: 20px;">
+        <!--circleクラスで円の色サイズを指定、h1見出しはベットで色指定-->
+        <h1><div class="circle">●<span1>予定の新規登録</span1></div></h1>
+
+        <!--記入欄-->
+        <!--Thymleaf関係-->
+        <form action=" /schedule/adds" method = post>
+            <p>新規登録に必要な情報を入力してください</p>
+            <span th:text="${message}" style="color:red"></span>
+            <!---->
+            <p>予定開始日</p>
+                <select name="sta_year" id="id_year">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_year -->
+                </select>年
+                <select name="sta_month" id="id_month">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_month -->
+                </select>月
+                <select name="sta_day" id="id_day">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_day -->
+                </select>日
+            <p>予定開始時間</p>
+            	<select name="sta_hour" id = "sta_hour"></select>時<select name="sta_min" id = "sta_min"></select>分
+            <p>予定終了日</p>
+                <select name="end_year" id="end_year">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_year -->
+                </select>年
+                <select name="end_month" id="end_month">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_month -->
+                </select>月
+                <select name="end_day" id="end_day">
+                <!-- option要素がjavascriptのプログラムにより挿入される、id_day -->
+                </select>日
+             <p>予定終了時間</p>
+            	<select name="end_hour" id = "end_hour"></select>時<select name="end_min" id = "end_min"></select>分
+            <p>資産名</p>
+	            <select name="asset_name">
+	            <option value=""></option>
+	            <div th:if="${count} < 0" value="">
+                    <option></option>
+                </div>
+                <div th:if="${count} == null" value="">
+                    <option></option>
+                </div>
+	            <div th:if="${count} >= 0" th:value="${asset0}">
+                    <option th:text = "${asset0}"></option>
+                </div>
+                <div th:if="${count} > 0" th:value="${asset1}">
+                    <option th:text = "${asset1}"></option>
+                </div>
+                <div th:if="${count} > 1" th:value="${asset2}">
+                    <option th:text = "${asset2}"></option>
+                </div>
+                <div th:if="${count} > 2" th:value="${asset3}">
+                    <option th:text = "${asset3}"></option>
+                </div>
+                <div th:if="${count} > 3" th:value="${asset4}">
+                    <option th:text = "${asset4}"></option>
+                </div>
+                <div th:if="${count} > 4" th:value="${asset5}">
+                    <option th:text = "${asset5}"></option>
+                </div>
+                <div th:if="${count} > 5" th:value="${asset6}">
+                    <option th:text = "${asset6}"></option>
+                </div>
+                <div th:if="${count} > 6" th:value="${asset7}">
+                    <option th:text = "${asset7}"></option>
+                </div>
+                <div th:if="${count} > 7" th:value="${asset8}">
+                    <option th:text = "${asset8}"></option>
+                </div>
+                <div th:if="${count} > 8" th:value="${asset9}">
+                    <option th:text = "${asset9}"></option>
+                </div>
+                <div th:if="${count} > 9" th:value="${asset10}">
+                    <option th:text = "${asset10}"></option>
+                </div>
+                
+	            </select>
+	            
+            <p>利用者名</p>
+            	<select name="name">
+	            <option value=""></option>
+	            
+                <div th:if="${count2} >= 0" th:value="${name0}">
+                    <option th:text = "${name0}"></option>
+                </div>
+                <div th:if="${count2} > 0" th:value="${name1}">
+                    <option th:text = "${name1}"></option>
+                </div>
+                <div th:if="${count2} > 1" th:value="${name2}">
+                    <option th:text = "${name2}"></option>
+                </div>
+                <div th:if="${count2} > 2" th:value="${name3}">
+                    <option th:text = "${name3}"></option>
+                </div>
+                <div th:if="${count2} > 3" th:value="${name4}">
+                    <option th:text = "${name4}"></option>
+                </div>
+                <div th:if="${count2} > 4" th:value="${name5}">
+                    <option th:text = "${name5}"></option>
+                </div>
+                
+            	</select>
+            	
+            <p>利用人数</p>
+            	<select name="selectNumber" id = "number"></select>人
+            <p>利用目的</p>
+            	<textarea name="purpose" cols="50" rows="10" class="text"></textarea>
+
+            <p><input type="submit" value="登録"></p>
+            
+            
+        </form>
+
+
+    </div>
+
+    <script>
+    
+    /*
+     * 年月日のプルダウン
+     */
+        (function() {
+          'use strict';
+        
+          /*
+            今日の日付データを変数todayに格納
+           */
+          var optionLoop, this_day, this_month, this_year, today;
+          today = new Date();
+          this_year = today.getFullYear();
+          this_month = today.getMonth() + 1;
+          this_day = today.getDate();
+        
+          /*
+            ループ処理（スタート数字、終了数字、表示id名、デフォルト数字）
+           */
+          optionLoop = function(start, end, id, this_day) {
+            var i, opt;
+        
+            opt = null;
+            for (i = start; i <= end ; i++) {
+              if (i === this_day) {
+                opt += "<option value='" + i + "' selected>" + i + "</option>";
+              } else {
+                opt += "<option value='" + i + "'>" + i + "</option>";
+              }
+            }
+            return document.getElementById(id).innerHTML = opt;
+          };
+        
+        
+          /*
+            関数設定（スタート数字[必須]、終了数字[必須]、表示id名[省略可能]、デフォルト数字[省略可能]）
+           */
+          optionLoop(1950, this_year, 'id_year', this_year);
+          optionLoop(1, 12, 'id_month', this_month);
+          optionLoop(1, 31, 'id_day', this_day);
+        })();
+    /*
+     * 年月日のプルダウン
+     */
+        (function() {
+            'use strict';
+          
+            /*
+              今日の日付データを変数todayに格納
+             */
+            var optionLoop, this_day, this_month, this_year, today;
+            today = new Date();
+            this_year = today.getFullYear();
+            this_month = today.getMonth() + 1;
+            this_day = today.getDate();
+          
+            /*
+              ループ処理（スタート数字、終了数字、表示id名、デフォルト数字）
+             */
+            optionLoop = function(start, end, id, this_day) {
+              var i, opt;
+          
+              opt = null;
+              for (i = start; i <= end ; i++) {
+                if (i === this_day) {
+                  opt += "<option value='" + i + "' selected>" + i + "</option>";
+                } else {
+                  opt += "<option value='" + i + "'>" + i + "</option>";
+                }
+              }
+              return document.getElementById(id).innerHTML = opt;
+            };
+          
+          
+            /*
+              関数設定（スタート数字[必須]、終了数字[必須]、表示id名[省略可能]、デフォルト数字[省略可能]）
+             */
+            optionLoop(1950, this_year, 'end_year', this_year);
+            optionLoop(1, 12, 'end_month', this_month);
+            optionLoop(1, 31, 'end_day', this_day);
+          })();
+    
+	/*
+	 * 人数表示
+	 */
+	 (function() {
+         'use strict';
+       
+         /*
+           今日の日付データを変数todayに格納
+          */
+         var optionLoop;
+       
+         /*
+           ループ処理（スタート数字、終了数字、表示id名、デフォルト数字）
+          */
+         optionLoop = function(start, end, id, this_day) {
+           var i, opt;
+       
+           opt = null;
+           for (i = start; i <= end ; i++) {
+             if (i === this_day) {
+               opt += "<option value='" + i + "' selected>" + i + "</option>";
+             } else {
+               opt += "<option value='" + i + "'>" + i + "</option>";
+             }
+           }
+           return document.getElementById(id).innerHTML = opt;
+         };
+       
+       
+         /*
+           関数設定（スタート数字[必須]、終了数字[必須]、表示id名[省略可能]、デフォルト数字[省略可能]）
+          */
+         optionLoop(1, 10, 'number');
+       })();
+	
+	/*
+     * 年月日のプルダウン
+     */
+     (function() {
+         'use strict';
+       
+         /*
+           今日の日付データを変数todayに格納
+          */
+         var optionLoop;
+       
+         /*
+           ループ処理（スタート数字、終了数字、表示id名、デフォルト数字）
+          */
+         optionLoop = function(start, end, id, this_day) {
+           var i, opt;
+       
+           opt = null;
+           for (i = start; i <= end ; i++) {
+             if (i === this_day) {
+               opt += "<option value='" + i + "' selected>" + i + "</option>";
+             } else {
+               opt += "<option value='" + i + "'>" + i + "</option>";
+             }
+           }
+           return document.getElementById(id).innerHTML = opt;
+         };
+       
+       
+         /*
+           関数設定（スタート数字[必須]、終了数字[必須]、表示id名[省略可能]、デフォルト数字[省略可能]）
+          */
+         optionLoop(0, 23, 'sta_hour');
+         optionLoop(0, 59, 'sta_min');
+         optionLoop(0, 23, 'end_hour');
+         optionLoop(0, 59, 'end_min');
+       })();
+
+	</script>
+</body>
+</html>

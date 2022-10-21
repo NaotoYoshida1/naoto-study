@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UpdTest</title>
+</head>
+<body>
+	<td th:text = "${test}"></tr>
+    <td th:text = "${test2}"></tr>
+
+	<form action="/insert" method = "post">
+        ID<input type="text" name="id">
+        名前<input type="text" name="name">
+        
+        <input type="submit" value="insert">
+    </form>
+
+</body>
+</html>

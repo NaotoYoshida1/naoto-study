@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="all" style="background: #ffffff; border: #ffffff solidsolid 2px; font-size: 100%; padding: 20px;">
+        <!--circleクラスで円の色サイズを指定、h1見出しはベットで色指定-->
+        <h1><div class="circle">●<span1>貸出管理システム</span1></div></h1>
+
+		<p><a href="/schedule/add">予定の登録</a></p>
+		<p><a href="/asset/schedule/check">予定の確認</a></p>
+		<!-- <p><a th:href=" '/asset/schedule/check' + ${pageCount}">予定の確認</a></p> -->
+        <table border="">
+            <tr>
+                <td>資産名</td>
+                <td>開始時間</td>
+                <td>名前</td>
+            </tr>
+            <div th:if = "${count} == 0">
+                <tr>
+                    <td th:text = "${asset10}"></td>
+                    <td th:text = "${start10}"></td>
+                    <td th:text = "${name10}"></td>
+                </tr>
+            </div>
+
+            <div th:if = "${count} == 1">
+                <tr><!--2個目-->
+                    <td th:text = "${asset20}"></td>
+                    <td th:text = "${start20}"></td>
+                    <td th:text = "${name20}"></td>
+                </tr>
+                <tr><!--2個目-->
+                    <td th:text = "${asset21}"></td>
+                    <td th:text = "${start21}"></td>
+                    <td th:text = "${name21}"></td>
+                </tr>
+            </div>
+
+            <div th:if = "${count} == 2">
+                <tr><!--3個目-->
+                    <td th:text = "${asset30}"></td>
+                    <td th:text = "${start30}"></td>
+                    <td th:text = "${name30}"></td>
+                </tr>
+                <tr><!--3個目-->
+                    <td th:text = "${asset31}"></td>
+                    <td th:text = "${start31}"></td>
+                    <td th:text = "${name31}"></td>
+                </tr>
+                <tr><!--3個目-->
+                    <td th:text = "${asset32}"></td>
+                    <td th:text = "${start32}"></td>
+                    <td th:text = "${name32}"></td>
+                </tr>
+            </div>
+
+            <div th:if = "${count} == 3">
+                <tr><!--4個目-->
+                    <td th:text = "${asset40}"></td>
+                    <td th:text = "${start40}"></td>
+                    <td th:text = "${name40}"></td>
+                </tr>
+                <tr><!--4個目-->
+                    <td th:text = "${asset41}"></td>
+                    <td th:text = "${start41}"></td>
+                    <td th:text = "${name41}"></td>
+                </tr>
+                <tr><!--4個目-->
+                    <td th:text = "${asset42}"></td>
+                    <td th:text = "${start42}"></td>
+                    <td th:text = "${name42}"></td>
+                </tr>
+                <tr><!--4個目-->
+                    <td th:text = "${asset43}"></td>
+                    <td th:text = "${start43}"></td>
+                    <td th:text = "${name43}"></td>
+                </tr>
+            </div>
+
+            <div th:if = "${count} == 4">
+                <tr><!--5個目-->
+                    <td th:text = "${asset50}"></td>
+                    <td th:text = "${start50}"></td>
+                    <td th:text = "${name50}"></td>
+                </tr>
+                <tr><!--5個目-->
+                    <td th:text = "${asset51}"></td>
+                    <td th:text = "${start51}"></td>
+                    <td th:text = "${name51}"></td>
+                </tr>
+                <tr><!--5個目-->
+                    <td th:text = "${asset52}"></td>
+                    <td th:text = "${start52}"></td>
+                    <td th:text = "${name52}"></td>
+                </tr>
+                <tr><!--5個目-->
+                    <td th:text = "${asset53}"></td>
+                    <td th:text = "${start53}"></td>
+                    <td th:text = "${name53}"></td>
+                </tr>
+                <tr><!--5個目-->
+                    <td th:text = "${asset54}"></td>
+                    <td th:text = "${start54}"></td>
+                    <td th:text = "${name54}"></td>
+                </tr>
+            </div>
+
+        </table>
+
+        
+
+    </div>
+    
+</body>
+</html>
