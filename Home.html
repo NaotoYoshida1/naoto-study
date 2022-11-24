@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home.css">
+    <title>Naoto's Library</title>
+    <style>
+        #left{
+        }
+        #right{
+        }
+        #center{
+        }
+        @media(min-width:600px){
+            #all{
+                display: flex;
+            }
+            #left{
+                flex-grow: 1;
+            }
+            #center{
+                flex-grow: 1;
+            }
+            #right{
+                flex-grow: 1;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <div class="content black">
+        <header>
+            <div class="space">
+                <br>↓<br><br>↓<br>
+            </div>
+            <!--固定部分-->
+            <div id="TopBar">
+                <a href="#Home">Top</a> / <a href="#About">About</a> / <a href="#Works">Works</a> / <a href="#Advice">Advice</a> / <a href="#Contact">Contact</a>
+            </div>
+
+            <!--一番最初のホーム-->
+            <section id = "Home">
+                <div class="scroll_up">
+                    <p>Naoto's Library</p>
+                    
+                        <!--写真のクラス作成-->
+                        <div class="image">
+                            <img src="river.jpg" name = "image" alt="FujiFilm X-S10 + FujiFilmXF35mmF1.4" id = "image">
+                        </div>
+                </div>
+            </section>
+        </header>
+    </div>
+
+    <!--About-->
+    <div class="content black">
+        <section id = "About">
+            <div class="scroll_up">
+                <div id="all">
+                    <nav>
+                        <div id = "left">
+                            <!--Aboutを画像で差し込む-->
+                            <!--画像を縦にするCSS-->
+                            <img src="" alt="">
+                            <p id = "left">ABOUT</p>
+                        </div>
+                    </nav>
+
+                    <main>
+                        <div id="center">
+                            <h2>n a o t o</h2>
+                            <div class = "space"><!--空白差し込み--></div>
+                                <p>1998年生まれ</p>
+                                <p>前職の食品製造会社にて社内の書類業務や、モノの管理に疑問を抱いた</p>
+                                <p>そこでVBAを用いて書類業務の省時間化に取り組んだ結果RPAに興味を持ち</p>
+                                <p>IT業界への転職を考え退職後、リカレントテクノロジーにてJava研修を受講</p>
+                                <p>その後Java、HTML、CSS、SQLを学習しスケジュール管理アプリを作成</p>
+                                <p>その後自分の作成したアプリに対する意見を知りたくなり本サイトを公開した</p>
+                            <div class = "small-space"><!--空白差し込み--></div>
+                                <p>アプリ作成環境</p>
+                                <p>フレームワークとしてspring boot、DBMSはPostgresを利用</p>
+                                <p>本アプリを作成するにあたりエラー発生時に状況、対応策を</p>
+                                <p>ソースコードノートへ記載し以後エラー対処に躓き次第記入し対応した</p>
+                            <div class = "small-space"><!--空白差し込み--></div>
+                                <p>将来の展望</p>
+                                <p>開発にて知識を取得後、上流工程でお客様のご希望を伺い</p>
+                                <p>アプリケーションに落とし込む「プロジェクトを管理できる人材」に</p>
+                                <p>成長したいと考えています</p>
+                        </div>
+                    </main>
+            
+                    <aside>
+                        <div id = "right">
+                            <!--自分の画像-->
+                            <img src="me.jpg" alt="me" id="me">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="space">
+                <br>↓<br><br>↓<br>
+            </div>
+        </section>
+    </div>
+
+    <!--WORKS-->
+    <div class="content darkgreen">
+        <section id = "Works">
+            <div class="scroll_up">
+                <div id="all">
+                    <nav>
+                        <div id = "left">
+                            <!--Aboutを画像で差し込む-->
+                            <!--画像を縦にするCSS-->
+                            <img src="" alt="">
+                            <p id = "left"></p>WORKS</p>
+                        </div>
+                    </nav>
+
+                    <main>
+                        <div id = "center">
+                            <h2>スケジュール管理アプリ</h2>
+                            <div class = "space"><!--空白差し込み--></div>
+                                <p>本アプリを作成するうえで、自分の成果物に対する方針や考えを</p>
+                                <p>落とし込んだ設計書を以下にリンクから確認できます</p>
+                            <div class = "small-space"><!--空白差し込み--></div>
+                                <a href="">データベース設計書</a>
+                                <a href="">基本設計書</a>
+                                <a href="">詳細設計書</a>
+                            <div class = "small-space"><!--空白差し込み--></div>
+                                <a href="">アプリのソースコード画面へ遷移</a>
+                        </div>
+                    </main>
+            
+                    <aside>
+                        <div id = "right">
+
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--Advice-->
+    <div class="content bage">
+        <section id = "Advice">
+            <div class="scroll_up">
+                <div id="all">
+                    <nav>
+                        <div id = "left">
+                            <!--Aboutを画像で差し込む-->
+                            <!--画像を縦にするCSS-->
+                            <img src="" alt="">
+                            <p id = "left">ADVICE</p>
+                        </div>
+                    </nav>
+
+                    <main>
+                        <div id = "center">
+                            <div class="space">
+                                <br>↓<br><br>↓<br><br>↓<br><br>↓<br>
+                            </div>
+                            <h2>本アプリに対する意見</h2>
+                            <div class = "space"><!--空白差し込み--></div>
+                                <p>今後の私の学習にご意見を取り込ませていただきます。</p>
+                                <p>ご意見を頂けると幸いでございます。</p>
+                            <div class = "small-space"><!--空白差し込み--></div>
+                
+                            <form action="">
+                                <p>Mail Address
+                                    <input type="text" name="Mail" id = "">
+                                </p>
+                                <p>Message
+                                    <input type="text" name="Advice" id = "">
+                                </p>
+                                <input type="submit" value="SEND">
+                            </form>
+                        </div>
+                        <div class="space">
+                            <br>↓<br><br>↓<br><br>↓<br><br>↓<br>
+                        </div>
+                    </main>
+            
+                    <aside>
+                        <div id = "right">
+
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--CONTACT-->
+    <div class="content black">
+        <section id = "Contact">
+            <div class="scroll_up">
+                <div id="all">
+                    <nav>
+                        <div id = "left">
+                            <!--Aboutを画像で差し込む-->
+                            <!--画像を縦にするCSS-->
+                            <img src="" alt="">
+                            <p id = "left">CONTACT</p>
+                        </div>
+                    </nav>
+
+                    <main>
+                        <div id = "center">
+                            <h2>n a o t o</h2>
+                            <div class = "space"><!--空白差し込み--></div>
+                            <form action="">
+                                <p>COMPANY
+                                    <input type="text" name="COMPANY" id="">
+                                </p>
+                                <p>NAME
+                                    <input type="text" name="NAME" id="">
+                                </p>
+                                <p>E-mail
+                                    <input type="text" name="E-mail" id="">
+                                </p>
+                                <p>TEL
+                                    <input type="text" name="TEL" id="">
+                                </p>
+                                <p>MESSAGE
+                                    <input type="text" name="MESSAGE" id="">
+                                </p>
+                                <p>
+                                    <input type="submit" value="SEND">
+                                    ご連絡をさせていただくまでに、お時間を要する場合がございます。
+                                    <p>また、場合によってはお返事が出来ない場合がございますのでご了承ください。</p>
+                                </p>
+                            </form>
+                        </div>
+                    </main>
+            
+                    <aside>
+                        <div id = "right">
+
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="Home.js"></script>
+<script type="text/javascript">
+    /*
+    画像のリンクを配列へ代入
+    */
+    img = new Array("river.jpg","sunset-back.jpg","sunset.jpg","station.jpg","water.jpg"); 
+
+    /*
+    count変数を作成
+    */
+    count = -1; //*2
+    imgTimer();
+    
+    function imgTimer() {
+        //画像番号
+        count++; 
+        //画像の枚数確認
+        /*
+        配列変数imgの要素の数が画像の数なので、変数countが配列上限に達したら０に戻す。
+        */
+        if (count == img.length) count = 0;
+        
+        //画像出力
+        document.image.src = img[count]; //*5
+        //次のタイマー呼びだし
+        setTimeout("imgTimer()",3000); //*6
+    }
+
+    /*
+     * 背景色の変更
+     */
+     window.addEventListener("scroll", function() {
+
+    let scroll = window.pageYOffset;
+    if (scroll > 5000) {
+    // black
+    document.getElementById('Contact').style.backgroundColor = '#000000';
+    } else if (scroll > 4000) {
+    // bage
+    document.getElementById('Advice').style.backgroundColor = '#ffdab9';
+    } else if (scroll > 3000) {
+    // darkgreen
+    document.getElementById('Works').style.backgroundColor = '#008b8b';
+    } else if (scroll > 2000) {
+    // black
+    document.getElementById('About').style.backgroundColor = '#000000';
+    } else if (scroll > 1000) {
+    // black
+    document.getElementById('Home').style.backgroundColor = '#000000';
+    }
+
+    });
+</script>
+
+</body>
+</html>
