@@ -1,0 +1,284 @@
+section {
+  display: flex;
+}
+.one {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+}
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: all 0.5s ease 0s;
+  z-index: -1;
+}
+.show .bg {
+  opacity: 1;
+}
+.bg._01 {
+  background-color: black;
+}
+.bg._02 {
+  background-color: black;
+}
+.bg._03 {
+  background-color: #008080;
+}
+.bg._04 {
+  background-color: #F5DEB3;
+}
+.onebox {
+  width: 100%;
+  font-size: 18px;
+  margin: 0 auto;
+  padding: 150px;
+  /* 箱の拝啓を透過してボックスの色を見えないようにして背景色と同化させてる */
+  background-color: rgba(100, 100, 100, 0);  }
+.onebox img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+  margin-bottom: 15px;
+}
+.onebox p {
+  text-align: left;
+  margin: 0;
+}
+
+/*==================
+base
+==================*/
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  word-break: break-word;
+}
+p._a {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 30px 0 0;
+}
+p._a .link {
+  display: inline-block;
+  color: #607D8B;
+  padding-left: 1.3em;
+  text-indent: -1.3em;
+}
+p._a .link:before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #607D8B;
+  border-right: 2px solid #607D8B;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-right: 10px;
+}
+
+
+body{
+display: grid;
+}
+header {
+grid-row-start: 1;
+grid-row-end: 2;
+grid-column-start: 1;
+grid-column-end: -1;
+}
+main {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 1;
+grid-column-end: 3;
+}
+aside {
+grid-row-start: 2;
+grid-row-end: 3;
+grid-column-start: 3;
+grid-column-end: 4;
+}
+footer {
+grid-row-start: -2;
+grid-row-end: -1;
+grid-column-start: 1;
+grid-column-end: -1;
+}
+nav{
+color: white;
+}
+
+
+
+
+
+
+
+/* formタグのテキストボックスを揃える */
+form{
+  padding: 0 0px;
+}
+form dl dt{
+  width: 165px;
+  padding: 0 0px;
+  float: left;
+  clear: both;
+}
+form dl dd{
+  padding: 0 0;
+}
+
+
+#CONTACT{
+  color: black;
+  text-decoration: underline;
+  border-bottom: 2px black;
+}
+*{
+  
+}
+#link{
+  /* リンクの色を指定 */
+  color: white;
+}
+#contact_color{
+  /* contactの文字色を指定 */
+  color: black;
+}
+.advice_send{
+  display: inline-block;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  background-color: #008080;
+  color: white;
+  border: 2px solid white;
+}
+.contact_send{
+  display: inline-block;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px;
+  background-color: #F5DEB3;
+  color: black;
+  border: 2px solid black;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 3000px;
+  background: black;
+  color: white;
+  transition: 1s;
+}
+#TopBar{
+  background-color: black;
+  color: white;
+  font-style: italic;
+  position: fixed; /* 要素の位置を固定する */
+  top: 2%; /* 基準の位置を画面の一番下に指定する */
+  right: 5%; /* 基準の位置を画面の一番右に指定する */
+  z-index:1;  /* レイヤー順番決め */
+}
+#Home{
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  z-index:0;  /* レイヤー順番決め */
+}
+#left{
+  text-orientation: sideways;
+  writing-mode: vertical-rl;
+  text-align: center;
+  color: white;
+  text-decoration: underline;
+  border-bottom: 2px blueviolet;
+
+  position: static; /* 要素の位置を固定する */
+  bottom: auto; /* 基準の位置を画面の一番下に指定する */
+  left: 0cm; /* 基準の位置を画面の一番右に指定する */
+}
+#me{
+  width: 400px;
+  height: 400px;
+  left: 50%;
+  transform: translate(10%,30%);
+}
+#image{
+  width: 100%;
+  height: 850px;
+}
+.space{
+  opacity: 0;
+}
+
+/*----------------------------
+scroll_up ｜下から上へ出現
+----------------------------*/
+.scroll_up {
+  transition: 2s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+.scroll_up.on {
+  transform: translateY(0);
+  opacity: 1.0;
+}
+aside{
+  margin-right: auto;
+}
+.scroll_up.early {
+  transition: 0.5s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+.scroll_up.early.on {
+  transform: translateY(0);
+  opacity: 1.0;
+}
+
+/*--------------------------
+セクションの位置調整
+---------------------------*/
+#Home{
+  position: relative;
+  left: 15%;
+}
+#About{
+  position: relative;
+}
+#Works{
+  position: relative;
+}
+#Advice{
+  position: relative;
+}
+#Contact{
+  color: black;
+  position: relative;
+}
